@@ -3,20 +3,18 @@ package com.bignerdranch.android.criminalintent
 import androidx.lifecycle.ViewModel
 import java.util.*
 
-// 10.2 Create a CrimeListViewModel class that extends (inherits from) ViewModel
 class CrimeListViewModel : ViewModel() {
 
-    // Add a property to store a list of Crimes
     val crimes = mutableListOf<Crime>()
 
-    // In the following init block, populate the list with dummy data
     init {
-        for (i in 0 until 100) { // this will populate the list with 100 Crime objects
+        for (i in 0 until 100) {
             val crime = Crime(
                 id = UUID.randomUUID(),
                 title ="Crime #$i",
                 date = Date(),
-                isSolved = i % 2 == 0
+                isSolved = i % 2 == 0,
+                requiresPolice = i % 3 == 0     // TODO add requiresPolice to crime objects
             )
             crimes += crime
         }
