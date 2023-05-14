@@ -14,7 +14,7 @@ class CrimeListViewModel : ViewModel() {
                 title ="Crime #$i",
                 date = Date(),
                 isSolved = i % 2 == 0,
-                requiresPolice = i % 3 == 0     // TODO add requiresPolice to crime objects
+                requiresPolice = i % 5 == 0     // TODO add requiresPolice to crime objects
             )
             crimes += crime
         }
